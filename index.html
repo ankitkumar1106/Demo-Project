@@ -1,183 +1,169 @@
 <!DOCTYPE html>
-<!-- Template by quackit.com -->
-<html>
+<html lang="en">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>3 Column Layout</title>
-	<style type="text/css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr. Camel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
-		/* Layout */
-		body {
-			min-width: 630px;
-		}
+    body {
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-		#container {
-			padding-left: 200px;
-			padding-right: 190px;
-		}
-		
-		#container .column {
-			position: relative;
-			float: left;
-		}
-		
-		#center {
-			padding: 10px 20px;
-			width: 100%;
-		}
-		
-		#left {
-			width: 180px;
-			padding: 0 10px;
-			right: 240px;
-			margin-left: -100%;
-		}
-		
-		#right {
-			width: 130px;
-			padding: 0 10px;
-			margin-right: -100%;
-		}
-		
-		#footer {
-			clear: both;
-		}
-		
-		/* IE hack */
-		* html #left {
-			left: 150px;
-		}
+    .container {
+      line-height: 150%;
+    }
 
-		/* Make the columns the same height as each other */
-		#container {
-			overflow: hidden;
-		}
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: #e9e9e9;
+    }
 
-		#container .column {
-			padding-bottom: 1001em;
-			margin-bottom: -1000em;
-		}
+    .header h1 {
+      color: #222222;
+      font-size: 30px;
+      font-family: "Pacifico", cursive;
+    }
 
-		/* Fix for the footer */
-		* html body {
-			overflow: hidden;
-		}
-		
-		* html #footer-wrapper {
-			float: left;
-			position: relative;
-			width: 100%;
-			padding-bottom: 10010px;
-			margin-bottom: -10000px;
-			background: #fff;
-		}
+    .header .social a {
+      padding: 0 5px;
+      color: #222222;
+    }
 
-		/* Aesthetics */
-		body {
-			margin: 0;
-			padding: 0;
-			font-family:Sans-serif;
-			line-height: 1.5em;
-		}
-		
-		p {
-			color: #555;
-		}
+    .left {
+      float: left;
+      width: 180px;
+      margin: 0;
+      padding: 1em;
+    }
 
-		nav ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-		}
-		
-		nav ul a {
-			color: darkgreen;
-			text-decoration: none;
-		}
+    .content {
+      margin-left: 190px;
+      border-left: 1px solid #d4d4d4;
+      padding: 1em;
+      overflow: hidden;
+    }
 
-		#header, #footer {
-			font-size: large;
-			padding: 0.3em;
-			background: #BCCE98;
-		}
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
 
-		#left {
-			background: #DAE9BC;
-		}
-		
-		#right {
-			background: #F7FDEB;
-		}
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
 
-		#center {
-			background: #fff;
-		}
+    li a.active {
+      background-color: #84e4e2;
+      color: white;
+    }
 
-		#container .column {
-			padding-top: 1em;
-		}
-		
-	</style>
-	
-	<script type="text/javascript">
-		/* =============================
-		This script generates sample text for the body content. 
-		You can remove this script and any reference to it. 
-		 ============================= */
-		var bodyText=["The smaller your reality, the more convinced you are that you know everything.", "If the facts don't fit the theory, change the facts.", "The past has no power over the present moment.", "This, too, will pass.", "</p><p>You will not be punished for your anger, you will be punished by your anger.", "Peace comes from within. Do not seek it without.", "<h3>Heading</h3><p>The most important moment of your life is now. The most important person in your life is the one you are with now, and the most important activity in your life is the one you are involved with now."]
-		function generateText(sentenceCount){
-			for (var i=0; i<sentenceCount; i++)
-			document.write(bodyText[Math.floor(Math.random()*7)]+" ")
-		}
-	</script>	
+    li a:hover:not(.active) {
+      background-color: #29292a;
+      color: white;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      margin: 30px 0;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+    }
+
+    tr:nth-child(1) {
+      background-color: #84e4e2;
+      color: white;
+    }
+
+    tr td i.fas {
+      display: block;
+      font-size: 35px;
+      text-align: center;
+    }
+
+    .footer {
+      padding: 55px 20px;
+      background-color: #2e3550;
+      color: white;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-
-	<header id="header"><p>Header...</p></header>
-
-	<div id="container">
-
-		<main id="center" class="column">
-			<article>
-			
-				<h1>Heading</h1>
-				<p><script>generateText(50)</script></p>
-			
-			</article>								
-		</main>
-
-		<nav id="left" class="column">
-			<h3>Left heading</h3>
-			<ul>
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-				<li><a href="#">Link 5</a></li>
-			</ul>
-			<h3>Left heading</h3>
-			<ul>
-				<li><a href="#">Link 1</a></li>
-				<li><a href="#">Link 2</a></li>
-				<li><a href="#">Link 3</a></li>
-				<li><a href="#">Link 4</a></li>
-				<li><a href="#">Link 5</a></li>
-			</ul>
-
-		</nav>
-
-		<div id="right" class="column">
-			<h3>Right heading</h3>
-			<p><script>generateText(1)</script></p>
-		</div>
-
-	</div>
-
-	<div id="footer-wrapper">
-		<footer id="footer"><p>Footer...</p></footer>
-	</div>
-
+  <div class="container">
+    <header class="header">
+      <h1>Mr. Camel</h1>
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </header>
+    <aside class="left">
+      <img src="./assets/html/mr-camel.jpg" width="160px" />
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <br><br>
+      <p>"Do something important in life. I convert green grass to code."<br>- Mr Camel</p>
+    </aside>
+    <main class="content">
+      <h2>About Me</h2>
+      <p>I don't look like some handsome horse, but I am a real desert king. I can survive days without water.</p>
+      <h2>My Career</h2>
+      <p>I work as a web developer for a company that makes websites for camel businesses.</p>
+      <hr><br>
+      <h2>How Can I Help You?</h2>
+      <table>
+        <tr>
+          <th>SKILL 1</th>
+          <th>SKILL 2</th>
+          <th>SKILL 3</th>
+        </tr>
+        <tr>
+          <td><i class="fas fa-broom"></i></td>
+          <td><i class="fas fa-archive"></i></td>
+          <td><i class="fas fa-trailer"></i></td>
+        </tr>
+        <tr>
+          <td>Cleaning kaktus in your backyard</td>
+          <td>Storing some fat for you</td>
+          <td>Taking you through the desert</td>
+        </tr>
+        <tr>
+      </table>
+      <form>
+        <label>Email: <input type="text" name="email"></label><br>
+        <label> Mobile: <input type="text" name="mobile"> </label><br>
+        <label>Message: <textarea name="message" rows="5" cols="30"></textarea></label><br>
+        <input type="submit" value="Submit" /><br>
+      <closeform></closeform></form>
+    </main>
+    <footer class="footer">© Copyright Mr. Camel</footer>
+  </div>
 </body>
 
 </html>
